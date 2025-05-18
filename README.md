@@ -4,13 +4,14 @@ Multilingual Generative Retrieval via Cross-lingual Semantic Compression.
 ## Description
 We have open-sourced the implementation of MGR-CSC and the dataset mNQ320k we constructed, which can be used to reproduce the results in the paper.
 
+> We will upload the full dataset soon
 
 ## Installation
 	> pip install -r requirement.txt 
 
 ## Getting Started
 
-	>sh run.sh 
+	> sh run.sh 
 
 
 
