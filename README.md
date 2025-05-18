@@ -6,7 +6,8 @@ We have open-sourced the implementation of MGR-CSC and the dataset mNQ320k we co
 
 
 ## Getting Started
-$ sh run.sh
+'''python
+# sh run.sh
 
 ### Installation
 $ pip install -r requirement.txt
