@@ -1,0 +1,28 @@
+CUDA_VISIBLE_DEVICES=1,2,3,4,5,6,7 \
+torchrun  --nproc_per_node=8 run_train.py \
+        --task "MGR-CSC" \
+        --model_name "mt5-base" \
+        --run_name "ours" \
+        --max_length 32 \
+        --train_file train.jsonl \
+        --valid_file dev.jsonl \
+        --output_dir "/output/ours" \
+        --learning_rate 0.0005 \
+        --warmup_steps 150000 \
+        --per_device_train_batch_size 128 \
+        --per_device_eval_batch_size 48 \
+        --evaluation_strategy steps \
+        --eval_steps 1000 \
+        --max_steps 150000 \
+        --save_strategy steps \
+        --dataloader_num_workers 10 \
+        --save_steps 1000 \
+        --save_total_limit 2 \
+        --load_best_model_at_end \
+        --gradient_accumulation_steps 1 \
+        --report_to wandb \
+        --logging_steps 100 \
+        --dataloader_drop_last False \
+        --metric_for_best_model Hits@10 \
+        --greater_is_better True \
+        --remove_prompt True
