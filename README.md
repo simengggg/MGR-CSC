@@ -1,6 +1,7 @@
 # MGR-CSC repository
 Multilingual Generative Retrieval via Cross-lingual Semantic Compression.
-Abstract: Generative Information Retrieval is an emerging retrieval paradigm that exhibits remarkable performance in monolingual scenarios.
+
+**Abstract:** Generative Information Retrieval is an emerging retrieval paradigm that exhibits remarkable performance in monolingual scenarios.
 However, applying these methods to multilingual retrieval still encounters two primary challenges, cross-lingual identifier misalignment and identifier inflation. 
 To address these limitations, we propose Multilingual Generative Retrieval via Cross-lingual Semantic Compression (MGR-CSC), a novel framework that unifies semantically equivalent multilingual keywords into shared atoms to align semantics and compresses the identifier space, and we propose a dynamic multi-step constrained decoding strategy during retrieval. 
 MGR-CSC improves cross-lingual alignment by assigning consistent identifiers and enhances decoding efficiency by reducing redundancy. 
