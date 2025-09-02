@@ -18,7 +18,6 @@ def truncate_after_word(input_string, word):
     else:
         return ""
 
-# 读取整个字符串列表（而不是逐行 JSONL）
 with open("msmarco_DSI_train_data.json", "r", encoding="utf-8") as f_zh:
     data_zh = json.load(f_zh)
 
