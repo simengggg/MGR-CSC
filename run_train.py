@@ -160,7 +160,6 @@ def main():
         valid_dataset = IndexingTrainDataset(path_to_data=run_args.valid_file,
                                              max_length=run_args.max_length,
                                              cache_dir='cache',
-                                             remove_prompt=run_args.remove_prompt,
                                              tokenizer=tokenizer)
         
         lookup_table = generate_lookup_table(train_dataset)
