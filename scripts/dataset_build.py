@@ -136,7 +136,7 @@ def process_all_files(cluster_file_path, text_file_path, file3_path, file4_path,
 
 cluster_file_path = "cluster_result.jsonl" 
 text_file_path = "mnq320k_queriers_6keywords.json"     
-file3_path = "train.json.qg.json"         
+file3_path = "trainTquery.json"         
 file4_path = "dev.json"         
 output1_path = "train_dataset_other_similarity_or_keywords.jsonl"    
 output2_path = "dev_dataset_other_similarity_or_keywords.jsonl"     
