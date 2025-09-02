@@ -24,5 +24,4 @@ torchrun  --nproc_per_node=8 run_train.py \
         --logging_steps 10 \
         --dataloader_drop_last False \
         --metric_for_best_model Hits@10 \
-        --greater_is_better True \
-        --remove_prompt True
+        --greater_is_better True 
