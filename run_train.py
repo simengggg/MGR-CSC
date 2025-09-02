@@ -131,9 +131,7 @@ def main():
     parser = HfArgumentParser((TrainingArguments, RunArguments))
     training_args, run_args = parser.parse_args_into_dataclasses()
 
-    # We use wandb logger: https://wandb.ai/site.
-    if training_args.local_rank == 0:  # only on main process
-        # Initialize wandb run
+    if training_args.local_rank == 0: 
         wandb.login()
         wandb.init(project="Experiment_mnq320k", name=training_args.run_name)
 
@@ -216,7 +214,6 @@ def main():
 
     else:
         raise NotImplementedError("--task should be in 'MGR-CSC' ")
-
 
 if __name__ == "__main__":
     main()
