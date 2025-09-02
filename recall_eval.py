@@ -64,34 +64,25 @@ def save_predictions_to_file(predictions, expected_text_ids, output_file_path):
     print(f"recall@1 and recall@10 result save as: {output_file_path}")
 
 
-# 从验证数据中提取 text_id 作为期望值
 expected_text_ids = {item["text_id"]: item["text_id"] for item in validation_data}
-
-# 生成预测结果
 predictions = generate_predictions_with_beam_search(validation_data, beam_size=10)
-
-# 将预测结果保存到文件
 output_file_path = "recall_predictions.jsonl"
 save_predictions_to_file(predictions, expected_text_ids, output_file_path)
 
-# 计算 Hits@k
 def calculate_hits_at_k(predictions, k, expected_text_ids):
     hits = 0
     total = len(predictions)
 
     for text_id, predicted_texts in predictions.items():
-        # 检查预测结果是否与期望的 text_id 匹配
         if text_id in expected_text_ids and str(expected_text_ids[text_id]) in predicted_texts[:k]:
             hits += 1
 
     hits_at_k = hits / total if total > 0 else 0
     return hits_at_k
 
-# 计算 HITS@1 和 HITS@10
 hits_at_1 = calculate_hits_at_k(predictions, k=1, expected_text_ids=expected_text_ids)
 hits_at_10 = calculate_hits_at_k(predictions, k=10, expected_text_ids=expected_text_ids)
 
-# 输出评估结果
 print(f"recall@1: {hits_at_1:.4f}")
 print(f"recall10: {hits_at_10:.4f}")
 
