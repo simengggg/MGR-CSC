@@ -10,7 +10,7 @@ Experiments demonstrate that MGR-CSC achieves outstanding retrieval accuracy, im
 ## Description
 We have open-sourced the implementation of MGR-CSC and the dataset mNQ320k we constructed, which can be used to reproduce the results in the paper.
 
-> We upload the full [mNQ320k dataset](https://huggingface.co/datasets/sssssimeng/mNQ320k) now
+> We upload the full [mNQ320k dataset](https://huggingface.co/datasets/sssssimeng/mNQ320k) now.
 
 ## Installation
 	> pip install -r requirement.txt 
