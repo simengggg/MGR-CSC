@@ -12,7 +12,6 @@ class IndexingTrainDataset(Dataset):
             max_length: int,
             cache_dir: str,
             tokenizer: PreTrainedTokenizer,
-            remove_prompt=False,
     ):
         self.train_data = datasets.load_dataset(
             'json',
@@ -34,9 +33,6 @@ class IndexingTrainDataset(Dataset):
 
     def __getitem__(self, item):
         data = self.train_data[item]
-        if self.remove_prompt:
-            data['text'] = data['text'][9:] if data['text'].startswith('Passage: ') else data['text']
-            data['text'] = data['text'][10:] if data['text'].startswith('Question: ') else data['text']
         input_ids = self.tokenizer(data['text'],
                                    return_tensors="pt",
                                    truncation='only_first',
